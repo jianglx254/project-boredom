@@ -1,5 +1,5 @@
 // 🚨 PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE
-const APPS_SCRIPT_URL = "YOUR_DEPLOYED_APPS_SCRIPT_URL_HERE"; 
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzSEJKlrbjpdQcsZvqK9FNe7yd5ab5KQ9a9tIi-z0UJlkLa6Ybe2CMpHEz82x3gYyMjYA/exec"; 
 
 async function fetchProductivityData() {
     try {
