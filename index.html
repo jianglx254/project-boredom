@@ -3,27 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Productivity Dashboard</title>
+    <title>Productivity Dashboard</title>
     
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#FF6B35">
     
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header>
-        <h1>📊 Daily Metrics</h1>
-    </header>
-
-    <div class="dashboard-container">
-        
-        <div class="widget deep-work-widget">
-            <h2>Deep Work Hours Today</h2>
-            <p class="data-value" id="deepWorkValue">Loading...</p> 
+    <!-- Intro Animation -->
+    <div id="introAnimation" class="intro-animation">
+        <div class="intro-content">
+            <div class="animated-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+                <div class="shape shape-6"></div>
+            </div>
+            <div class="intro-text">
+                <h1 class="intro-title">Rise & Shine</h1>
+                <p class="intro-subtitle">Preparing your morning brief...</p>
+            </div>
         </div>
-        
     </div>
+
+    <!-- Main Content (hidden initially) -->
+    <div id="mainContent" class="main-content hidden">
+
+    <!-- Morning Brief Section -->
+    <section class="morning-brief">
+        <div class="brief-header">
+            <h1 id="greeting">Good Morning!</h1>
+            <p class="date-display" id="dateDisplay"></p>
+        </div>
+        <div class="brief-stats">
+            <div class="stat-item">
+                <span class="stat-label">Today's Focus</span>
+                <span class="stat-value" id="todayFocus">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Completed</span>
+                <span class="stat-value" id="completedTasks">0</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day Planning Section -->
+    <section class="day-planning">
+        <div class="planning-header">
+            <h2>📋 Plan Your Day</h2>
+        </div>
+        <div class="task-input-container">
+            <input 
+                type="text" 
+                id="taskInput" 
+                placeholder="Add a task or goal for today..."
+                class="task-input"
+            >
+            <button id="addTaskBtn" class="add-btn">Add</button>
+        </div>
+        <div class="tasks-container" id="tasksContainer">
+            <!-- Tasks will be dynamically added here -->
+        </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section class="metrics-section">
+        <h2>📊 Today's Metrics</h2>
+        <div class="dashboard-container">
+            <div class="widget deep-work-widget">
+                <h3>Deep Work Hours</h3>
+                <p class="data-value" id="deepWorkValue">Loading...</p> 
+            </div>
+        </div>
+    </section>
+
+    </div>
+    <!-- End Main Content -->
 
     <script src="script.js"></script>
 </body>
